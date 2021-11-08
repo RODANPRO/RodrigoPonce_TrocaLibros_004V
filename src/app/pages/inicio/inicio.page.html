@@ -15,7 +15,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="backColor">
   <ion-list>
     <ion-item *ngFor="let c of componentes" [routerLink]="c.redirecTo" detail="true" color="light">
       <ion-icon [name]="c.icon" slot="start" color="tertiary"></ion-icon>

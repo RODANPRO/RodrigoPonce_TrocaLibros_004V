@@ -25,6 +25,16 @@ export class InicioPage implements OnInit {
       name:'Registro',
       redirecTo: '/registro'
     },
+    {
+      icon:'book-outline',
+      name:'Bestsellers',
+      redirecTo: '/bestsellers'
+    },
+    {
+      icon:'enter-outline',
+      name:'Login',
+      redirecTo: '/login'
+    },
   ];
 
   constructor(private menuController: MenuController) { }

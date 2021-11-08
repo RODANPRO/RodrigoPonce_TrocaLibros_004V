@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ServiceregistroService, Usuario } from 'src/app/services/serviceregistro.service';
+import { Platform, ToastController, IonList } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro',
@@ -8,6 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class RegistroPage implements OnInit {
 
   usuario= {
+    nombres:'',
+    apellidos:'',
+    region:'',
+    comuna:'',
+    articulos:'',
+    genero:'',
     email:'',
     password:''
   };

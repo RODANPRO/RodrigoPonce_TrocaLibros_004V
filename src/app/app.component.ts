@@ -26,5 +26,15 @@ export class AppComponent {
       name:'Registro',
       redirecTo: '/registro'
     },
+    {
+      icon:'book-outline',
+      name:'Bestsellers',
+      redirecTo: '/bestsellers'
+    },
+    {
+      icon:'enter-outline',
+      name:'Login',
+      redirecTo: '/login'
+    },
   ];
 }

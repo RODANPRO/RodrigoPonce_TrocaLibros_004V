@@ -14,63 +14,64 @@
 
 <ion-content>
   <ion-card>
-    <ion-item>
-      <ion-label class="textLabel" position="floating">Nombres: </ion-label>
-      <ion-input type="text" placeholder="e.j: Nicanor Segundo" required></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label class="textLabel" position="floating">Apellidos: </ion-label>
-      <ion-input type="text" position="floating" placeholder="e.j: Parra Sandoval" required></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label class="textLabel" position="floating">Región: </ion-label>
-      <ion-input type="text" position="floating" placeholder="e.j: Metropolitana" required></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label class="textLabel" position="floating">Comuna: </ion-label>
-      <ion-input type="text" position="floating" placeholder="e.j: Santiago" required></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label class="textLabel">Artículos de interés</ion-label>
-      <ion-select multiple="true">
-        <ion-select-option value="libros">Libros</ion-select-option>
-        <ion-select-option value="revistas">Revistas</ion-select-option>
-        <ion-select-option value="comics mangas">Comics - Mangas</ion-select-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label class="textLabel">Géneros de interés</ion-label>
-      <ion-select multiple="true">
-        <ion-select-option value="ficción">Ficción y temas afines</ion-select-option>
-        <ion-select-option value="sociedad">Sociedad</ion-select-option>
-        <ion-select-option value="programacion">Programación</ion-select-option>
-        <ion-select-option value="tecnologia">Tecnología</ion-select-option>
-        <ion-select-option value="ciencias sociales">Ciencias sociales</ion-select-option>
-        <ion-select-option value="novelas chilenas">Novela chilena</ion-select-option>
-        <ion-select-option value="novela negra">Novela negra</ion-select-option>
-        <ion-select-option value="poesia">Poesía</ion-select-option>
-        <ion-select-option value="salud">Salud</ion-select-option>
-        <ion-select-option value="historia">Historia</ion-select-option>
-        <ion-select-option value="cuentos">Cuentos</ion-select-option>
-        <ion-select-option value="manga">Manga</ion-select-option>
-        <ion-select-option value="biografias">Biografías</ion-select-option>
-        <ion-select-option value="ensayos">Ensayos</ion-select-option>
-      </ion-select>
-    </ion-item>
 
     <!--FORMULARIO-->
     <form #formulario="ngForm" (ngSubmit)="onSubmit()">
-      
+
       <!--MÉTODO PARA VERIFICAR EL INGRESO CORRECTO DE DATOS AL FORMULARIO
-      <ion-list-header>
-        <ion-label>Credenciales: {{formulario.valid}}</ion-label>
-      </ion-list-header>
+          <ion-list-header>
+            <ion-label>Credenciales: {{formulario.valid}}</ion-label>
+          </ion-list-header>
       -->
+      <ion-item>
+        <ion-label class="textLabel" position="floating">Nombres: </ion-label>
+        <ion-input type="text" placeholder="e.j: Nicanor Segundo" name="nombres" [(ngModel)]="usuario.nombres" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="textLabel" position="floating">Apellidos: </ion-label>
+        <ion-input type="text" position="floating" placeholder="e.j: Parra Sandoval" name="apellidos" [(ngModel)]="usuario.apellidos" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="textLabel" position="floating">Región: </ion-label>
+        <ion-input type="text" position="floating" placeholder="e.j: Metropolitana" name="region" [(ngModel)]="usuario.region" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="textLabel" position="floating">Comuna: </ion-label>
+        <ion-input type="text" position="floating" placeholder="e.j: Santiago" name="comuna" [(ngModel)]="usuario.comuna" required ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="textLabel">Artículos de interés</ion-label>
+        <ion-select multiple="true" name="articulos" [(ngModel)]="usuario.articulos" required>
+          <ion-select-option value="libros">Libros</ion-select-option>
+          <ion-select-option value="revistas">Revistas</ion-select-option>
+          <ion-select-option value="comics mangas">Comics - Mangas</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="textLabel">Géneros de interés</ion-label>
+        <ion-select multiple="true" name="genero" [(ngModel)]="usuario.genero" required>
+          <ion-select-option value="ficción">Ficción y temas afines</ion-select-option>
+          <ion-select-option value="sociedad">Sociedad</ion-select-option>
+          <ion-select-option value="programacion">Programación</ion-select-option>
+          <ion-select-option value="tecnologia">Tecnología</ion-select-option>
+          <ion-select-option value="ciencias sociales">Ciencias sociales</ion-select-option>
+          <ion-select-option value="novelas chilenas">Novela chilena</ion-select-option>
+          <ion-select-option value="novela negra">Novela negra</ion-select-option>
+          <ion-select-option value="poesia">Poesía</ion-select-option>
+          <ion-select-option value="salud">Salud</ion-select-option>
+          <ion-select-option value="historia">Historia</ion-select-option>
+          <ion-select-option value="cuentos">Cuentos</ion-select-option>
+          <ion-select-option value="manga">Manga</ion-select-option>
+          <ion-select-option value="biografias">Biografías</ion-select-option>
+          <ion-select-option value="ensayos">Ensayos</ion-select-option>
+        </ion-select>
+      </ion-item>
+
       <ion-item>
         <ion-label class="textLabel" position="floating">Email: </ion-label>
         <ion-input type="email" placeholder="correo@ejemplo.com" name="email" [(ngModel)]="usuario.email"
@@ -85,7 +86,7 @@
       </ion-item>
 
       <!--BOTÓN ENVIAR DATA - ACTIVA EL MÉTODO onSubmit DEL FORM-->
-      <ion-button [disabled]="formulario.invalid" type="submit" expand="block" routerLink="/inicio" color="success">
+      <ion-button (click)="addUsuario" [disabled]="formulario.invalid" type="submit" expand="block" routerLink="/inicio" color="success">
         ¡Vamos!
       </ion-button>
     </form>
@@ -94,8 +95,8 @@
 
 <ion-footer>
   <ion-toolbar class="ion-text-center" color="tertiary">
-      <ion-icon name="logo-facebook" class="ion-padding"></ion-icon>
-      <ion-icon name="logo-twitter" class="ion-padding"></ion-icon>
-      <ion-icon name="logo-instagram" class="ion-padding"></ion-icon>
+    <ion-icon name="logo-facebook" class="ion-padding"></ion-icon>
+    <ion-icon name="logo-twitter" class="ion-padding"></ion-icon>
+    <ion-icon name="logo-instagram" class="ion-padding"></ion-icon>
   </ion-toolbar>
 </ion-footer>

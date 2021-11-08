@@ -1,0 +1,27 @@
+<ion-content class="backColor">
+  <ion-card-content>
+    <ion-img src="/assets/troca_libros_grande.png"></ion-img>
+  </ion-card-content>
+
+  <div class="ion-padding-vertical">
+    <ion-card class="ion-text-center">
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h1>Registro TrocaLibros</h1>
+        </ion-label>
+      </ion-card-title>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="login.Usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" >Password</ion-label>
+          <ion-input type="password" [(ngModel)]="login.Password"></ion-input>
+        </ion-item>
+      </ion-card-content>
+      <ion-button shape="block" (click)="ingresar()">Ingresar</ion-button>
+    </ion-card>
+  </div>
+  
+</ion-content>
